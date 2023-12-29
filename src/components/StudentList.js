@@ -12,13 +12,20 @@ export default function StudentList() {
 
   const [show, setShow] = useState(true); //true: แสดงเนื้อหา, false: ซ่อนเนื้อหา
 
+  const myStyle = {
+    color: "purple",
+    fontSize: "20px",
+    padding: "20px",
+    fontStyle: "italic",
+  };
+
   function deleteStudent(id) {
     setStudent(students.filter((item) => item.id !== id));
   }
   return (
     <ul>
       <div className="header">
-        <h1>จำนวนนักเรียน = {students.length}</h1>
+        <h1 style={myStyle}>จำนวนนักเรียน ({students.length})</h1>
         <button onClick={() => setShow(!show)}>สลับ</button>
       </div>
       {show &&
