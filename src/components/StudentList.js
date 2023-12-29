@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./StudentList.css";
 
 export default function StudentList() {
   // create state
@@ -15,21 +16,22 @@ export default function StudentList() {
     setStudent(students.filter((item) => item.id !== id));
   }
   return (
-    <>
-      <h1>จำนวนนักเรียน = {students.length}</h1>
-      <h2>{show}</h2>
-      <button onClick={() => setShow(!show)}>สลับ</button>
-      <ul>
-        {show &&
-          students.map((item) => (
-            <li key={item.id}>
-              <p>
-                {item.id} - {item.name}
-              </p>
-              <button onClick={() => deleteStudent(item.id)}>ลบ</button>
-            </li>
-          ))}
-      </ul>
-    </>
+    <ul>
+      <div className="header">
+        <h1>จำนวนนักเรียน = {students.length}</h1>
+        <button onClick={() => setShow(!show)}>สลับ</button>
+      </div>
+      {show &&
+        students.map((item) => (
+          <li key={item.id}>
+            <p>
+              {item.id} - {item.name}
+            </p>
+            <button onClick={() => deleteStudent(item.id)} className="delete">
+              ลบ
+            </button>
+          </li>
+        ))}
+    </ul>
   );
 }
