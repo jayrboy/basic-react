@@ -2,14 +2,30 @@ import { useState } from "react";
 
 function App() {
   // create state
-  let [count, setCount] = useState(0);
+  const [students, setStudent] = useState([
+    { id: 1, name: "เจ" },
+    { id: 2, name: "โจโจ้" },
+    { id: 3, name: "วุฒิชัย" },
+    { id: 4, name: "ฟิม" },
+  ]);
+
+  function deleteStudent(id) {
+    setStudent(students.filter((item) => item.id !== id));
+  }
 
   return (
     <>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>เพิ่มค่า</button>
-      <button onClick={() => setCount(count - 1)}>ลบค่า</button>
-      <button onClick={() => setCount(0)}>เคลียร์</button>
+      <h1>จำนวนนักเรียน = {students.length}</h1>
+      <ul>
+        {students.map((item) => (
+          <li key={item.id}>
+            <p>
+              {item.id} - {item.name}
+            </p>
+            <button onClick={() => deleteStudent(item.id)}>ลบ</button>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
