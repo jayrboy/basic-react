@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <Header />
-      <StudentList />
+      <main>
+        <StudentList />
+      </main>
     </>
   );
 }
