@@ -15,7 +15,7 @@ function App() {
     <div className="container">
       <Header title="Home" />
       <main>
-        <AddForm />
+        <AddForm students={students} setStudent={setStudent} />
         <StudentList students={students} deleteStudent={deleteStudent} />
       </main>
     </div>
