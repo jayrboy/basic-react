@@ -1,11 +1,11 @@
 import Logo from "../images/logo.png";
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ title }) {
   return (
     <nav>
       <img src={Logo} alt="logo" className="logo" />
-      <a href=" ">หน้าแรก</a>
+      <a href=" ">{title}</a>
     </nav>
   );
 }
