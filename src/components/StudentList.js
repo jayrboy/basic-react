@@ -19,6 +19,10 @@ export default function StudentList() {
     fontStyle: "italic",
   };
 
+  const btnStyle = {
+    background: show ? "purple" : "green",
+  };
+
   function deleteStudent(id) {
     setStudent(students.filter((item) => item.id !== id));
   }
@@ -26,7 +30,9 @@ export default function StudentList() {
     <ul>
       <div className="header">
         <h1 style={myStyle}>จำนวนนักเรียน ({students.length})</h1>
-        <button onClick={() => setShow(!show)}>สลับ</button>
+        <button onClick={() => setShow(!show)} style={btnStyle}>
+          {show ? "ซ่อน" : "แสดง"}
+        </button>
       </div>
       {show &&
         students.map((item) => (
