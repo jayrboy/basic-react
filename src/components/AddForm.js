@@ -18,6 +18,7 @@ export default function AddForm(props) {
       };
       setStudent([...students, newStudent]);
       setName("");
+      setGender("male");
     }
   }
 
