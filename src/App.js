@@ -5,7 +5,7 @@ import AddForm from "./components/AddForm";
 import "./App.css";
 
 function App() {
-  const [students, setStudent] = useState([{ id: 1, name: "เจ" }]);
+  const [students, setStudent] = useState([]);
 
   function deleteStudent(id) {
     setStudent(students.filter((item) => item.id !== id));

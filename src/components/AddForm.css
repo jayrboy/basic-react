@@ -37,3 +37,10 @@ input:focus {
   margin: 10px;
   background: green;
 }
+
+select {
+  font-size: 18px;
+  padding: 7px;
+  margin: 10px;
+  border-radius: 5px;
+}
