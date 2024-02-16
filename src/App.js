@@ -1,14 +1,14 @@
-import Header from "./components/Header";
-import StudentList from "./components/StudentList";
-import { useState } from "react";
-import AddForm from "./components/AddForm";
-import "./App.css";
+import Header from './components/Header'
+import StudentList from './components/StudentList'
+import { useState } from 'react'
+import AddForm from './components/AddForm'
+import './App.css'
 
 function App() {
-  const [students, setStudent] = useState([]);
+  const [students, setStudent] = useState([])
 
   function deleteStudent(id) {
-    setStudent(students.filter((item) => item.id !== id));
+    setStudent(students.filter((item) => item.id !== id))
   }
 
   return (
@@ -19,7 +19,7 @@ function App() {
         <StudentList students={students} deleteStudent={deleteStudent} />
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

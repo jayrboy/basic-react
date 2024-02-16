@@ -1,5 +1,5 @@
-import Logo from "../images/logo.png";
-import "./Header.css";
+import Logo from '../images/logo.png'
+import './Header.css'
 
 export default function Header({ title }) {
   return (
@@ -7,5 +7,5 @@ export default function Header({ title }) {
       <img src={Logo} alt="logo" className="logo" />
       <a href=" ">{title}</a>
     </nav>
-  );
+  )
 }

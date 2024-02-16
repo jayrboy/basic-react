@@ -1,24 +1,24 @@
-import { useState } from "react";
-import "./AddForm.css";
+import { useState } from 'react'
+import './AddForm.css'
 
 export default function AddForm(props) {
-  const { students, setStudent } = props;
-  const [name, setName] = useState("");
-  const [gender, setGender] = useState("male");
+  const { students, setStudent } = props
+  const [name, setName] = useState('')
+  const [gender, setGender] = useState('male')
 
-  function saveStudent(e) {
-    e.preventDefault();
+  function saveStudent(ev) {
+    ev.preventDefault()
     if (!name) {
-      alert("กรุณาป้อนข้อมูลด้วยครับ");
+      alert('กรุณาป้อนข้อมูลด้วยครับ')
     } else {
       const newStudent = {
         id: Math.floor(Math.random() * 1000),
         name: name,
         gender: gender,
-      };
-      setStudent([...students, newStudent]);
-      setName("");
-      setGender("male");
+      }
+      setStudent([...students, newStudent])
+      setName('')
+      setGender('male')
     }
   }
 
@@ -30,9 +30,9 @@ export default function AddForm(props) {
           type="text"
           name="name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(ev) => setName(ev.target.value)}
         />
-        <select value={gender} onChange={(e) => setGender(e.target.value)}>
+        <select value={gender} onChange={(ev) => setGender(ev.target.value)}>
           <option value="male">ชาย</option>
           <option value="female">หญิง</option>
         </select>
@@ -41,5 +41,5 @@ export default function AddForm(props) {
         </button>
       </form>
     </section>
-  );
+  )
 }

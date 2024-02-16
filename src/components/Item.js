@@ -1,7 +1,7 @@
-import "./Item.css";
+import './Item.css'
 
 export default function Item(props) {
-  const { data, deleteStudent } = props;
+  const { data, deleteStudent } = props
   return (
     <>
       <li key={data.id} className={data.gender}>
@@ -11,5 +11,5 @@ export default function Item(props) {
         </button>
       </li>
     </>
-  );
+  )
 }
